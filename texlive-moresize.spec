@@ -1,3 +1,9 @@
+# revision 17513
+# category Package
+# catalog-ctan /macros/latex/contrib/moresize
+# catalog-date 2010-03-20 19:23:31 +0100
+# catalog-license lppl
+# catalog-version 1.9
 Name:		texlive-moresize
 Version:	1.9
 Release:	1
@@ -49,6 +55,7 @@ font sizes above 17.28pt.
 #- source
 %doc %{_texmfdistdir}/source/latex/moresize/moresize.dtx
 %doc %{_texmfdistdir}/source/latex/moresize/moresize.ins
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -59,3 +66,5 @@ font sizes above 17.28pt.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
