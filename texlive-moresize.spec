@@ -55,3 +55,17 @@ font sizes above 17.28pt.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.9-2
++ Revision: 754106
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.9-1
++ Revision: 719062
+- texlive-moresize
+- texlive-moresize
+- texlive-moresize
+- texlive-moresize
+
