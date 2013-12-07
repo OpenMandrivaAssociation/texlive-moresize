@@ -6,7 +6,7 @@
 # catalog-version 1.9
 Name:		texlive-moresize
 Version:	1.9
-Release:	5
+Release:	6
 Summary:	Allows font sizes up to 35.83pt
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/moresize
