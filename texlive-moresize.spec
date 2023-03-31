@@ -1,6 +1,6 @@
 Name:		texlive-moresize
 Version:	17513
-Release:	1
+Release:	2
 Summary:	Allows font sizes up to 35.83pt
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/moresize
