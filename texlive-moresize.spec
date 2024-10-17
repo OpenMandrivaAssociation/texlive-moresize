@@ -3,7 +3,7 @@ Version:	17513
 Release:	2
 Summary:	Allows font sizes up to 35.83pt
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/moresize
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/moresize
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/moresize.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/moresize.doc.r%{version}.tar.xz
