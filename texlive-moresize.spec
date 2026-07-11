@@ -1,52 +1,26 @@
-Name:		texlive-moresize
-Version:	17513
-Release:	2
+%global tl_name moresize
+%global tl_revision 79618
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.9
+Release:	%{tl_revision}.1
 Summary:	Allows font sizes up to 35.83pt
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/moresize
-License:	LPPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/moresize.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/moresize.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/moresize.source.r%{version}.tar.xz
+License:	lppl1
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/moresize.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/moresize.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/moresize.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-A package for using font sizes up to 35.88pt, for example with
-the EC fonts. New commands \HUGE and \ssmall for selecting font
-sizes are provided together with some options working around
-current LaTeX2e shortcomings in using big font sizes. The
-package also provides options for improving the typesetting of
-paragraphs (or headlines) with embedded math expressions at
-font sizes above 17.28pt.
+A package for using font sizes up to 35.88pt, for example with the EC
+fonts. New commands \HUGE and \ssmall for selecting font sizes are
+provided together with some options working around current LaTeX2e
+shortcomings in using big font sizes. The package also provides options
+for improving the typesetting of paragraphs (or headlines) with embedded
+math expressions at font sizes above 17.28pt.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/tex/latex/moresize/moresize.sty
-%doc %{_texmfdistdir}/doc/latex/moresize/moresize.pdf
-%doc %{_texmfdistdir}/doc/latex/moresize/moresize.upl
-%doc %{_texmfdistdir}/doc/latex/moresize/msizetst.tex
-#- source
-%doc %{_texmfdistdir}/source/latex/moresize/moresize.dtx
-%doc %{_texmfdistdir}/source/latex/moresize/moresize.ins
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar tex doc source %{buildroot}%{_texmfdistdir}
